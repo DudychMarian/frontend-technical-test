@@ -1,3 +1,107 @@
-.VehicleList {
-  width: 100%;
+.row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.column {
+  flex: 100%;
+
+  @media screen and (min-width: 768px) {
+    flex: 50%;
+  }
+
+  @media screen and (min-width: 1440px) {
+    flex: 25%;
+  }
+}
+
+.card {
+  display: flex;
+  max-width: 100%;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+  }
+
+  &__picture {
+    display: flex;
+    max-width: 180px;
+
+    @media screen and (min-width: 768px) {
+      max-width: 100%;
+    }
+  }
+
+  &__image {  
+    height: 100%;
+    max-width: 130px;
+    width: auto;
+
+    @media screen and (min-width: 768px) {
+      height: 100%;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &__body {
+    border-color: #eef1f1;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    padding: 1.25rem;
+
+    @media screen and (min-width: 768px) {
+      border-width: 1px;
+      padding: 2rem 1.25rem 1.25rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    margin: 0 0 .25rem;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+
+    @media screen and (min-width: 768px) {
+      border-bottom: 2px solid #0c121c;
+      border-top: 2px solid #0c121c;
+      font-size: 1.5rem;
+      margin: 0 auto 1.5rem;
+      max-width: 296px;
+      padding: .5rem 0;
+      text-align: center;
+    }
+  }
+
+  &__price {
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-align: left;
+
+    @media screen and (min-width: 768px) {
+      margin: 0 0 1rem;
+      text-align: center;
+    }
+  }
+
+  &__copy {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: left;
+
+    @media screen and (min-width: 768px) {
+      -webkit-line-clamp: 1;
+      max-width: 460px;
+      text-align: center;
+    }
+  }
 }

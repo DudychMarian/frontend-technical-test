@@ -1,6 +1,7 @@
 import React from 'react';
 import useData from './useData';
 import './style.scss';
+import VehicleCard from './vehicle-card';
 
 export default function VehicleList() {
   // eslint-disable-next-line no-unused-vars
@@ -15,26 +16,23 @@ export default function VehicleList() {
   }
 
   return (
-    <div data-testid="results">
-      <p>List of vehicles will be displayed here</p>
-      <p>
-        Visit
-        <a href="/api/vehicles.json" target="_blank"> /api/vehicles.json</a>
-        {' '}
-        (main endpoint)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_fpace.json" target="_blank">/api/vehicle_fpace.json</a>
-        {' '}
-        (detail endpoint - apiUrl)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_xf.json" target="_blank">/api/vehicle_xf.json</a>
-        {' '}
-        (vehicle without any price)
-      </p>
+    <div data-testid="results" id="vehicle-list">
+      <div className="row">
+        {vehicles.length > 0 ? vehicles.filter((v) => v.price).map((v) => (
+          <div key={`Jaguar-${v.id}`} className="column">
+            <VehicleCard
+              name={v.id}
+              media={v.media}
+              price={v.price}
+              description={v.description}
+            />
+          </div>
+        )) : (
+          <h1>
+            No vehicles to show :(
+          </h1>
+        )}
+      </div>
     </div>
   );
 }

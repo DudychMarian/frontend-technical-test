@@ -1,5 +1,18 @@
-.root {
-  margin: 14px;
-  padding: 12px;
-  z-index: 12;
+body {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #0c121c;
+  font-weight: 700;
+}
+
+p {
+  color: #4a4f54;
+  font-weight: 400;
+  margin: 0 0 1rem;
 }
