@@ -10,6 +10,7 @@ import { request } from './helpers';
 export default async function getData() {
   const vehicles = await fetch('/api/vehicles.json').then((data) => data.json());
   try {
+    // TO-DO: connect axios(or use fetch)
     const vehicleResponses = await Promise.all(
       vehicles.map((v) => fetch(v.apiUrl)
         .then((r) => r.json())

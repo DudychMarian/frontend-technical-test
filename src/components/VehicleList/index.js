@@ -12,25 +12,27 @@ export default function VehicleList() {
   }
 
   if (error) {
-    return <div data-testid="error">{ error }</div>;
+    return <div data-testid="error">{error}</div>;
   }
 
   return (
     <div data-testid="results" id="vehicle-list">
       <div className="row">
-        {vehicles.length > 0 ? vehicles.filter((v) => v.price).map((v) => (
-          <div key={`Jaguar-${v.id}`} className="column">
-            <VehicleCard
-              name={v.id}
-              media={v.media}
-              price={v.price}
-              description={v.description}
-            />
-          </div>
-        )) : (
-          <h1>
-            No vehicles to show :(
-          </h1>
+        {vehicles.length > 0 ? (
+          vehicles
+            .filter((v) => v.price)
+            .map((v) => (
+              <div key={`Jaguar-${v.id}`} className="column">
+                <VehicleCard
+                  name={v.id}
+                  media={v.media}
+                  price={v.price}
+                  description={v.description}
+                />
+              </div>
+            ))
+        ) : (
+          <h1>No vehicles to show :(</h1>
         )}
       </div>
     </div>
